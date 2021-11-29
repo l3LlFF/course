@@ -1,0 +1,152 @@
+\documentclass[12pt, a4paper]{article}
+
+% Поля стрaницы
+\usepackage{geometry}
+\geometry{left=0.5cm}
+\geometry{right=0.7cm}
+\geometry{top=2cm}
+\geometry{bottom=2cm}
+
+%Package mandatory for each paper\
+
+%\usepackage[utf8]{inputenc}
+\usepackage[cp1251]{inputenc}
+%\usepackage[T2A]{fontenc}
+\usepackage[russian]{babel}
+\usepackage{amsbsy}
+\usepackage{lscape}
+\usepackage{tikz}
+\usepackage{verbatim}
+\usepackage{textcase}
+\usepackage{graphicx}
+\usepackage{float}
+
+\usepackage{amsmath,mathtools}
+
+
+\DeclareGraphicsExtensions{.pdf,.png,.jpg, .jpeg}
+
+\usetikzlibrary{arrows,shapes}
+\newtheorem{thm}{Theorem}
+\newtheorem{lem}{Lemma}
+\newcommand{\thb}{{\boldsymbol \theta}}
+\newcommand{\eb}{{\bf e}}
+\newcommand{\nut}{\nu_t, \: t \geq 0}
+\newcommand{\pib}{{\boldsymbol \pi}}
+\newcommand{\pb}{{\bf p}}
+\def\bs{\boldsymbol}
+%Packages required by this paper
+\usepackage{rotating, longtable, hhline}
+\usepackage{amsmath, amsfonts, amssymb, amsthm}
+%Package for color
+\usepackage{xcolor}
+\usepackage{color,colortbl}
+%\DeclareUnicodeCharacter{00A0}{ }
+\definecolor{darkishgreen}{RGB}{86, 191, 0}
+\definecolor{modRed}{RGB}{230,82,90}
+
+%%% Работа с картинками
+\usepackage{graphicx}  % Для вставки рисунков
+\graphicspath{{images/}}  % папки с картинками
+\setlength\fboxsep{3pt} % Отступ рамки \fbox{} от рисунка
+\setlength\fboxrule{1pt} % Толщина линий рамки \fbox{}
+\usepackage{wrapfig} % Обтекание рисунков и таблиц текстом
+
+
+\begin{document}
+
+
+{\bf Uniformization procedure.}
+
+Denote  $h=\max\limits_{i=\overline{0,W}}(-D_0)_{ii}$.
+
+Then the matrix  $P(n,t),\; n\ge 1,$ can be represented in the following form:
+$$
+P(n,t)=\sum_{j=0}^{\infty}e^{-h t}{(h
+t)^j\over j!}K_n^{(j)},\; n\ge 0,  \eqno(1)
+$$
+
+where the matrices  $K_n^{(j)},\; n\ge 1, j\ge 0,$ are calculated by recursion
+
+$$
+K_0^{(0)}=I,\ K_n^{(0)}=O,\ n\ge 1,
+$$ $$
+K_0^{(j+1)}=K_0^{(j)}(I+h^{-1}D_0),
+$$ $$
+K_n^{(j+1)}=h^{-1}K_{n-1}^{(j)}D_1+K_n^{(j)}(I+h^{-1}D_0),\; n\ge 1,\; j\ge 0.
+$$
+
+{\bf Computation of transition probabilities }
+
+We consider the constant service time. In this case, the distribution function $B(t)$ has the form
+%\end{document}
+$$
+B(t)=\left\{
+\begin{array}{cc}
+0, & \;t\leq b_1,\\
+1, & \;t>b_1.
+\end{array}
+\right.
+$$
+
+
+
+
+
+
+\begin{itemize}
+\item[$\bullet$]
+
+
+
+$\varphi_{k}(t) = \frac{(\gamma t)^{k} }{k!} e^{-\gamma t},\; k \geq 0$.
+
+\item[$\bullet$]
+
+$ \hat\varphi_{k}(t) = \sum\limits_{i=k}^{\infty} \varphi_{i}(t),\; k \geq 0$.
+
+\item[$\bullet$]
+
+$ \varphi_{k} =  \varphi_{k}(b_1),\; k \geq 0.$
+
+\item[$\bullet$]
+$ \hat\varphi_{k} = \sum\limits_{i=k}^{\infty} \varphi_{i},\; k \geq 0$.
+
+\item[$\bullet$]
+$
+\sum\limits_{i=0}^{\infty} P(i,t) z^i = e^{(D_0+D_1z)t},\;|z|<1.$
+
+\item[$\bullet$]
+
+$ \Phi(i,k) =  \int\limits_{0}^{\infty} P(i,t)\varphi_{k}(t)dB(t)= P(i,b_1)\varphi_{k}(b_1)=e^{-(h+\gamma)b_1}\frac{(\gamma b_1)^k}{k!}\sum\limits_{j=0}^{\infty}\frac{(hb_1)^j}{j!}K_i^{(j)},\;$ $ i \geq 0,\; k \geq 0$.
+
+\item[$\bullet$] 
+
+$\hat \Phi(i,k) =  \int\limits_{0}^{\infty} P(i,t)\hat \varphi_{k}(t)dB(t)= P(i,b_1)\hat \varphi_{k}(b_1)=e^{-(h+\gamma)b_1}\sum\limits_{j=0}^{\infty}\frac{(hb_1)^j}{j!}K_i^{(j)}\sum\limits_{l=k}^{\infty}\frac{(\gamma b_1)^l}{l!},\;$ $ i \geq 0,\; k \geq 0$.
+
+\item[$\bullet$]
+
+$ N(m) = \int\limits_{0}^{\infty} P(m, t)\gamma e^{-\gamma t}dt=\gamma\sum\limits_{j=0}^{\infty}\frac{h^j}{j!}K_m^{(j)} \int\limits_{0}^{\infty}e^{-(h+\gamma) t}t^jdt=\frac{\gamma}{h+\gamma} \sum\limits_{j=0}^{\infty}(\frac{h}{h+\gamma})^jK_m^{(j)},\;$ $m \ge 0$.
+
+\item[$\bullet$]
+
+$ M(r) = \int\limits_{0}^{\infty} e^{D_{0}t}\varphi_{r}(t)D_{1}dt =
+	\int\limits_{0}^{\infty} e^{D_{0}t}\frac{(\gamma t)^{r} }{r!} e^{-\gamma I t}D_{1}dt = \gamma^{r}(-D_{0} +  \gamma I)^{-(r+1)}D_{1}
+$.
+
+\item[$\bullet$]
+
+$ \hat M(r) = \sum\limits_{l=r}^{\infty} M(l)=\gamma^{r}(-D_{0} +  \gamma I)^{-r}(-D_0)^{-1}D_{1},\; r \ge 0.$
+
+\end{itemize}
+
+\newpage
+
+Подскажите, нужно ли расписывать переходные вероятности следующим образом? Если да, то что еще можно упростить? 
+
+$$P\left\{(0, 0) \to (j, k' ) \right\}=M(0)\sum\limits_{n = 0}^{j}N(n)\Phi(j-n, k') + N(0)\sum\limits_{m = 0}^{k'}M(m)\Phi(j, k' - m)=$$
+
+$$(-D_0+\gamma I)^{-1}D_1\sum\limits_{n=0}^{j}\gamma\sum\limits_{l=0}^{\infty}\Bigl(\frac{h}{h+\gamma}\Bigr)^l\frac{1}{h+\gamma}K_n^{(l)}e^{-(h+\gamma)b_1}\frac{(\gamma b_1)^{k'}}{{k'}!}\sum\limits_{m=0}^{\infty}\frac{(hb_1)^m}{m}K_{j-n}^{(m)}+$$ $$\gamma\sum\limits_{j=0}^{\infty}\Bigl(\frac{h}{h+\gamma}\Bigr)^j\frac{1}{h+\gamma}K_0^{(j)}\sum\limits_{m=0}^{k'}\gamma^m(-D_0+\gamma I)^{-(m+1)}D_1e^{-(h+\gamma)b_1}\frac{(\gamma b_1)^{k'-m}}{(k'-m)!}\sum\limits_{l=0}^{\infty}\frac{(hb_1)^l}{l!}K_j^{(l)}=$$ $$(-D_0+\gamma I)^{-1}D_1\frac{\gamma}{h+\gamma}e^{-(h+\gamma)b_1}\frac{(\gamma b_1)^{k'}}{{k'}!}\sum\limits_{n=0}^{j}\sum\limits_{l=0}^{\infty}\Bigl(\frac{h}{h+\gamma}\Bigr)^lK_n^{(l)}\sum\limits_{m=0}^{\infty}\frac{(hb_1)^m}{m}K_{j-n}^{(m)}+$$ $$\gamma\frac{1}{h+\gamma}e^{-(h+\gamma)b_1}\sum\limits_{j=0}^{\infty}\Bigl(\frac{h}{h+\gamma}\Bigr)^jK_0^{(j)}\sum\limits_{m=0}^{k'}\gamma^m(-D_0+\gamma I)^{-(m+1)}D_1\frac{(\gamma b_1)^{k'-m}}{(k'-m)!}\sum\limits_{l=0}^{\infty}\frac{(hb_1)^l}{l!}K_j^{(l)},$$
+$$\; k'= {\overline{0,K-2}};$$
+
+\end{document}

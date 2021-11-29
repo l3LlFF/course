@@ -1,0 +1,97 @@
+\documentclass[12pt, a4paper]{article}
+
+% Поля стрaницы
+\usepackage{geometry}
+\geometry{left=0.5cm}
+\geometry{right=0.7cm}
+\geometry{top=2cm}
+\geometry{bottom=2cm}
+
+%Package mandatory for each paper\
+
+%\usepackage[utf8]{inputenc}
+\usepackage[cp1251]{inputenc}
+%\usepackage[T2A]{fontenc}
+\usepackage[russian]{babel}
+\usepackage{amsbsy}
+\usepackage{lscape}
+\usepackage{tikz}
+\usepackage{verbatim}
+\usepackage{textcase}
+\usepackage{graphicx}
+\usepackage{float}
+
+\usepackage{amsmath,mathtools}
+
+
+\DeclareGraphicsExtensions{.pdf,.png,.jpg, .jpeg}
+
+\usetikzlibrary{arrows,shapes}
+\newtheorem{thm}{Theorem}
+\newtheorem{lem}{Lemma}
+\newcommand{\thb}{{\boldsymbol \theta}}
+\newcommand{\eb}{{\bf e}}
+\newcommand{\nut}{\nu_t, \: t \geq 0}
+\newcommand{\pib}{{\boldsymbol \pi}}
+\newcommand{\pb}{{\bf p}}
+\def\bs{\boldsymbol}
+%Packages required by this paper
+\usepackage{rotating, longtable, hhline}
+\usepackage{amsmath, amsfonts, amssymb, amsthm}
+%Package for color
+\usepackage{xcolor}
+\usepackage{color,colortbl}
+%\DeclareUnicodeCharacter{00A0}{ }
+\definecolor{darkishgreen}{RGB}{86, 191, 0}
+\definecolor{modRed}{RGB}{230,82,90}
+
+%%% Работа с картинками
+\usepackage{graphicx}  % Для вставки рисунков
+\graphicspath{{images/}}  % папки с картинками
+\setlength\fboxsep{3pt} % Отступ рамки \fbox{} от рисунка
+\setlength\fboxrule{1pt} % Толщина линий рамки \fbox{}
+\usepackage{wrapfig} % Обтекание рисунков и таблиц текстом
+
+
+\begin{document}
+
+
+\begin{center}
+
+{\bf Система массового обслуживани $M/G/1$ с запасами как модель узла беспроводной сенсорной цепи со сбором энергии}
+
+\end{center}
+
+Рассматривается система массового обслуживания MАР/G/1 с запасами. В этой СМО обслуживание поступающего запроса возможно только при наличии  единицы энергии. Единицы энергии хранятся в  конечном буфере, в котором помещается $K$ таких единиц.
+Если запрос прибывает на обслуживание, когда прибор занят или в конечном буфере нет энергии, то он становится в конец очереди бесконечного размера. Запросы выбираются из очереди на обслуживание в соответствии с дисциплиной FIFO «первым пришел - первым ушел». Время обслуживания запроса  имеет произвольную функцию  распределения $B (t)$ с преобразованием Лапласа-Стилтьеса  $\beta(s)=\int\limits_0^ \infty e^{-st}d B(t)$ и средним $b_1<\infty$.
+Единицы  энергии поступают в буфер для энергии в  стационарном пуассоновском потоке  с интенсивностью $\gamma.$ Если в момент поступления единицы энергии буфер полностью заполнен ( в нем уже есть $K$ единиц энергии), то поступающая единица энергии теряется (возможно, перенаправляется на другой объект). В то же время единица энергии забирается из буфера в момент начала обслуживания запроса на приборе, так как для обслуживания одного запроса требуется одна единица энергии.
+
+
+\vspace{2mm}
+
+Требуется  при разных заданных распределениях  $B(t)$ (я думаю, возьмем детерминированное и РН)
+
+\vspace{2mm}
+
+1.	Вычислить матрицы вероятностей переходов вложенной ЦМ   $V_i, Y_i,  i\geq0.$ Количество вычисляемых матриц зависит от заданной точности ( норма этих матриц $\rightarrow 0$ при $i\rightarrow \infty$).
+
+2.	Проверить условие существования стационарного режима в системе (условие эргодичности вложенной ЦМ).
+
+3.	Вычислить стационарное распределение вложенной ЦМ. Построить графики для характеристик производительности.
+
+4.	Вычислить стационарное распределение вероятностей состояний системы в произвольный момент времени. Построить графики для характеристик производительности.
+
+5.	Вычислить среднее время пребывания запроса в системе. Постороить графики.
+
+
+
+
+\vspace{3mm}
+
+Предполагаю, что для курсового проекта задание будет состоять в знакомстве с ЦМ типа $M/G/1$, с собственно задачей и выполнением пунктов 1-3. А там будем смотреть.
+
+
+
+
+
+\end{document}
